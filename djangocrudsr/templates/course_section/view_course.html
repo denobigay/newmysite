@@ -1,0 +1,39 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+View Course and Section
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/course_index_style.css' %}">
+<div class="container-add mt-5">
+    <h1 class='text-center'>View Course and Section</h1>
+    <div class="content-container ">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="course_section_id">ID:</label>
+                <input type="text" id="course_section_id" value="{{ course_section.course_section_id }}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="course_and_section">Course and Section:</label>
+                <input type="text" id="course_and_section" value="{{ course_section.course_and_section }}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="date_created">Date Created:</label>
+                <input type="text" id="date_created" value="{{ course_section.date_created }}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="date_updated">Date Updated:</label>
+                <input type="text" id="date_updated" value="{{ course_section.date_updated }}" disabled>
+            </div>
+            <div class="text-center">
+                <a href="{% url 'index' %}" class="btn btn-primary custom-rounded-left">Back</a>
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

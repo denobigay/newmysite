@@ -1,0 +1,42 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+    Student Details
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/course_index_style.css' %}">
+<div class="container mt-5">
+    <h1 class='text-center'>Student Details</h1>
+    <div class="content-container">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="student_id_number">ID Number:</label>
+                <input type="text" id="student_id_number" value="{{ student.student_id_number }}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" value="{{ student.first_name }}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="middle_name">Middle Name:</label>
+                <input type="text" id="middle_name" value="{{ student.middle_name }}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" value="{{ student.last_name }}" disabled>
+            </div>
+            <div class="form-group">
+                <label for="course_and_section">Course and Section:</label>
+                <input type="text" id="course_and_section" value="{{ student.course_and_section.course_and_section }}" disabled>
+            </div>
+            <div class="text-center">
+                <a href="{% url 'student_index' %}" class="btn btn-primary custom-rounded-left">Back to Student List</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

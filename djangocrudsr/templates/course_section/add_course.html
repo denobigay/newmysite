@@ -1,0 +1,32 @@
+{% extends "layout/base.html" %}
+
+{% block title %}
+Add New Course
+{% endblock title %}
+
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/course_index_style.css' %}">
+
+<div class="container-add mt-5 ">
+    <h1 class="text-center mb-4">Add Course and Section</h1>
+
+    <div class="content-container-add">
+        <form action="/course_section_store/" method="post" class="text-center">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="course_and_section">Course and Section:</label>
+                <input type="text" class="form-control" id="course_and_section" name="course_section" required>
+            </div>
+            <div class="btn-block">
+                <a href="{% url 'index' %}" class="btn btn-primary  custom-rounded-left">Back</a>
+                <button type="submit" class="btn btn-success btn-block custom-rounded-right">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+{% endblock content %}
